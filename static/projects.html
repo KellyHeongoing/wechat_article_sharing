@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目案例 - UrbScape Nexus</title>
+    <meta name="description" content="城市规划与设计项目案例展示平台">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1>UrbScape Nexus</h1>
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>首页</span>
+                </a>
+                <a href="projects.html" class="nav-link active">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>项目案例</span>
+                </a>
+                <a href="standards.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>标准规范</span>
+                </a>
+                <a href="ai-tools.html" class="nav-link">
+                    <i class="fas fa-robot"></i>
+                    <span>AI工具箱</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 项目案例页面头部 -->
+        <section class="section">
+            <div class="page-header">
+                <h1>项目案例</h1>
+                <p>探索城市规划和设计领域的优秀项目案例</p>
+            </div>
+
+            <!-- 筛选和搜索 -->
+            <div class="filter-section">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-category="全部">全部</button>
+                    <button class="filter-tab" data-category="城市设计">城市设计</button>
+                    <button class="filter-tab" data-category="生态规划">生态规划</button>
+                    <button class="filter-tab" data-category="文化保护">文化保护</button>
+                    <button class="filter-tab" data-category="交通规划">交通规划</button>
+                    <button class="filter-tab" data-category="景观设计">景观设计</button>
+                </div>
+                
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="搜索项目..." id="searchInput">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目统计 -->
+            <div class="projects-stats">
+                <span id="projectCount">共找到 12 个项目</span>
+            </div>
+
+            <!-- 项目网格 -->
+            <div class="projects-showcase-grid" id="projectsGrid">
+                <!-- 项目卡片将通过JavaScript动态生成 -->
+            </div>
+
+            <!-- 加载更多 -->
+            <div class="load-more-section">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    加载更多 <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // 项目数据
+        const allProjects = [
+            {
+                id: 1,
+                title: "深圳湾超级总部基地",
+                category: "城市设计",
+                description: "深圳湾超级总部基地是深圳未来城市发展的核心区域，集商务办公、文化娱乐、生态居住于一体，打造国际化商务中心。",
+                image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop",
+                tags: ["城市更新", "商务区", "生态设计"],
+                year: "2023",
+                location: "深圳"
+            },
+            {
+                id: 2,
+                title: "成都天府绿道",
+                category: "生态规划",
+                description: "成都天府绿道是全球最长的城市绿道系统，串联起城市公园、湿地、森林等生态空间，构建绿色生态网络。",
+                image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
+                tags: ["绿道系统", "生态廊道", "慢行交通"],
+                year: "2022",
+                location: "成都"
+            },
+            {
+                id: 3,
+                title: "北京中轴线申遗保护",
+                category: "文化保护",
+                description: "北京中轴线是中国古代都城规划的杰作，体现了天人合一的哲学思想和礼制文化，展现古都风貌。",
+                image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&h=600&fit=crop",
+                tags: ["文化遗产", "历史保护", "城市轴线"],
+                year: "2021",
+                location: "北京"
+            },
+            {
+                id: 4,
+                title: "上海黄浦江滨江贯通",
+                category: "景观设计",
+                description: "黄浦江滨江贯通工程将45公里滨江岸线打造为市民共享的公共空间，提升城市品质。",
+                image: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&h=600&fit=crop",
+                tags: ["滨水空间", "公共空间", "城市更新"],
+                year: "2023",
+                location: "上海"
+            },
+            {
+                id: 5,
+                title: "杭州西湖文化景观",
+                category: "文化保护",
+                description: "西湖文化景观是中国传统园林艺术的典范，体现了人与自然和谐共生的理念，传承历史文化。",
+                image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+                tags: ["文化景观", "园林艺术", "世界遗产"],
+                year: "2020",
+                location: "杭州"
+            },
+            {
+                id: 6,
+                title: "广州珠江新城",
+                category: "城市设计",
+                description: "珠江新城是广州CBD核心区，展现了现代都市的繁华与活力，引领城市发展。",
+                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+                tags: ["CBD", "现代都市", "商务区"],
+                year: "2022",
+                location: "广州"
+            },
+            {
+                id: 7,
+                title: "西安城墙保护更新",
+                category: "文化保护",
+                description: "西安城墙是中国现存规模最大、保存最完整的古代城垣建筑，彰显历史文化价值。",
+                image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&h=600&fit=crop",
+                tags: ["古城保护", "历史建筑", "文化传承"],
+                year: "2021",
+                location: "西安"
+            },
+            {
+                id: 8,
+                title: "南京河西新城",
+                category: "城市设计",
+                description: "河西新城是南京现代化新城区，体现了生态优先、绿色发展的理念，建设宜居城市。",
+                image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
+                tags: ["新城建设", "生态城市", "绿色发展"],
+                year: "2023",
+                location: "南京"
+            },
+            {
+                id: 9,
+                title: "武汉东湖绿心",
+                category: "生态规划",
+                description: "东湖绿心是武汉城市生态系统的核心，为市民提供优质的生态空间，改善人居环境。",
+                image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+                tags: ["生态绿心", "城市公园", "生物多样性"],
+                year: "2022",
+                location: "武汉"
+            },
+            {
+                id: 10,
+                title: "重庆山城步道",
+                category: "交通规划",
+                description: "山城步道系统连接重庆的山地地形，为市民提供便捷的步行交通，体现山地特色。",
+                image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop",
+                tags: ["山地城市", "步行系统", "立体交通"],
+                year: "2021",
+                location: "重庆"
+            },
+            {
+                id: 11,
+                title: "青岛海滨景观带",
+                category: "景观设计",
+                description: "青岛海滨景观带展现了海洋城市的特色，融合了自然与人文景观，打造滨海魅力。",
+                image: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&h=600&fit=crop",
+                tags: ["海滨景观", "海洋城市", "旅游休闲"],
+                year: "2023",
+                location: "青岛"
+            },
+            {
+                id: 12,
+                title: "苏州园林保护",
+                category: "文化保护",
+                description: "苏州园林是中国古典园林的代表，体现了江南文化的精致与优雅，传承园林艺术。",
+                image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&h=600&fit=crop",
+                tags: ["古典园林", "江南文化", "世界遗产"],
+                year: "2020",
+                location: "苏州"
+            }
+        ];
+
+        let currentProjects = [...allProjects];
+        let displayedCount = 8;
+        let currentCategory = '全部';
+
+        // 初始化页面
+        function initProjectsPage() {
+            renderProjects();
+            setupEventListeners();
+            updateProjectCount();
+        }
+
+        // 渲染项目
+        function renderProjects() {
+            const grid = document.getElementById('projectsGrid');
+            const projectsToShow = currentProjects.slice(0, displayedCount);
+            
+            grid.innerHTML = projectsToShow.map(project => `
+                <div class="project-showcase-card" data-category="${project.category}">
+                    <div class="project-showcase-image">
+                        <img src="${project.image}" alt="${project.title}" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <h3>${project.title}</h3>
+                                <p>${project.description}</p>
+                                <div class="project-tags">
+                                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                </div>
+                                <div class="project-meta">
+                                    <span class="project-year">${project.year}</span>
+                                    <span class="project-location">${project.location}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-showcase-info">
+                        <h3>${project.title}</h3>
+                        <div class="project-category">${project.category}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 设置事件监听器
+        function setupEventListeners() {
+            // 筛选标签
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    const category = e.target.dataset.category;
+                    filterProjects(category);
+                });
+            });
+
+            // 搜索
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                searchProjects(searchTerm);
+            });
+
+            // 加载更多
+            document.getElementById('loadMoreBtn').addEventListener('click', () => {
+                displayedCount += 4;
+                renderProjects();
+                updateLoadMoreButton();
+            });
+        }
+
+        // 筛选项目
+        function filterProjects(category) {
+            currentCategory = category;
+            if (category === '全部') {
+                currentProjects = [...allProjects];
+            } else {
+                currentProjects = allProjects.filter(project => project.category === category);
+            }
+            displayedCount = 8;
+            renderProjects();
+            updateProjectCount();
+            updateLoadMoreButton();
+        }
+
+        // 搜索项目
+        function searchProjects(searchTerm) {
+            let filtered = allProjects;
+            
+            if (currentCategory !== '全部') {
+                filtered = filtered.filter(project => project.category === currentCategory);
+            }
+            
+            if (searchTerm) {
+                filtered = filtered.filter(project => 
+                    project.title.toLowerCase().includes(searchTerm) ||
+                    project.description.toLowerCase().includes(searchTerm) ||
+                    project.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            currentProjects = filtered;
+            displayedCount = 8;
+            renderProjects();
+            updateProjectCount();
+            updateLoadMoreButton();
+        }
+
+        // 更新项目数量
+        function updateProjectCount() {
+            document.getElementById('projectCount').textContent = `共找到 ${currentProjects.length} 个项目`;
+        }
+
+        // 更新加载更多按钮
+        function updateLoadMoreButton() {
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (displayedCount >= currentProjects.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'block';
+            }
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initProjectsPage);
+    </script>
+</body>
+</html> 

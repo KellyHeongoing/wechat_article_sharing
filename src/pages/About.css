@@ -1,0 +1,329 @@
+.about-page {
+  color: white;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* 平台介绍 */
+.platform-intro {
+  margin-bottom: 4rem;
+}
+
+.intro-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.intro-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.intro-content > p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.mission-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.mission-point {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.mission-point svg {
+  color: #4ecdc4;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.mission-point h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.mission-point p {
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* 数据统计 */
+.stats-section {
+  margin-bottom: 4rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* 团队介绍 */
+.team-section {
+  margin-bottom: 4rem;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.member-role {
+  color: #4ecdc4;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.member-info p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* 联系我们 */
+.contact-section {
+  margin-bottom: 4rem;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-item svg {
+  color: #4ecdc4;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.contact-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-item p {
+  opacity: 0.9;
+}
+
+/* 加入我们 */
+.join-section {
+  margin-bottom: 2rem;
+}
+
+.join-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.join-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.join-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.join-btn {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .intro-content h2,
+  .team-section h2,
+  .contact-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .mission-points {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .join-content {
+    padding: 2rem;
+  }
+  
+  .join-content h2 {
+    font-size: 1.5rem;
+  }
+} 
