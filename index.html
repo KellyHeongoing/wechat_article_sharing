@@ -1,14 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>城市规划与设计项目分享</title>
-    <meta name="description" content="城市规划和城市设计领域的项目文章分享平台" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <meta name="description" content="城市规划和城市设计领域的项目文章分享平台">
+    
+    <!-- Google Analytics 跟踪代码 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1>UrbScape Nexus</h1>
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>首页</span>
+                </a>
+                <a href="projects.html" class="nav-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>项目案例</span>
+                </a>
+                <a href="standards.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>标准规范</span>
+                </a>
+                <a href="ai-tools.html" class="nav-link">
+                    <i class="fas fa-robot"></i>
+                    <span>AI工具箱</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 首页部分 -->
+        <section id="home" class="section">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        探索城市之美
+                        <br>
+                        <span class="highlight">分享优秀案例</span>
+                    </h1>
+                    <p class="hero-description">
+                        专业的城市规划与设计项目分享平台，汇聚全球优秀案例，
+                        为城市发展提供创新思路和解决方案。
+                    </p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-primary">
+                            浏览项目
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="projects.html" class="btn btn-secondary">
+                            了解更多
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- 移除浮动图标，保持简洁 -->
+                </div>
+            </div>
+
+            <!-- 核心功能 -->
+            <div class="features">
+                <h2 class="section-title">核心功能</h2>
+                <div class="features-grid">
+                    <a href="projects.html" class="feature-card feature-link">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>项目案例</h3>
+                        <p>汇聚城市规划与设计领域的优秀项目案例，分享最新设计成果</p>
+                        <div class="feature-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                    <a href="standards.html" class="feature-card feature-link">
+                        <div class="feature-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>标准规范</h3>
+                        <p>涵盖国内外城市规划标准规范，提供权威的设计指导</p>
+                        <div class="feature-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                    <a href="ai-tools.html" class="feature-card feature-link">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI工具箱</h3>
+                        <p>集成智能设计工具，提升规划效率，助力创新设计</p>
+                        <div class="feature-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- 项目案例部分 -->
+        <section id="projects" class="section">
+            <div class="page-header">
+                <h1>项目案例</h1>
+                <p>探索城市规划和设计领域的优秀项目案例</p>
+                <a href="projects.html" class="view-all-btn">
+                    查看全部项目 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- 项目卡片将通过JavaScript动态生成 -->
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="monitor.js"></script>
+</body>
 </html> 

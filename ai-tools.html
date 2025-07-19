@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具箱 - UrbScape Nexus</title>
+    <meta name="description" content="城市规划与设计AI智能工具平台">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1>UrbScape Nexus</h1>
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>首页</span>
+                </a>
+                <a href="projects.html" class="nav-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>项目案例</span>
+                </a>
+                <a href="standards.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>标准规范</span>
+                </a>
+                <a href="ai-tools.html" class="nav-link active">
+                    <i class="fas fa-robot"></i>
+                    <span>AI工具箱</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- AI工具箱页面头部 -->
+        <section class="section">
+            <div class="page-header">
+                <h1>AI工具箱</h1>
+                <p>集成智能设计工具，提升规划效率，助力创新设计</p>
+            </div>
+
+
+
+            <!-- AI工具列表 -->
+            <div class="ai-tools-grid">
+                <div class="ai-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>AI工具集</h3>
+                        <p class="tool-description">
+                            全面的AI工具导航平台，收录国内外AI工具，涵盖写作、图像、视频、编程、设计等多个领域，助力提升工作效率。
+                        </p>
+                        <div class="tool-meta">
+                            <span class="meta-item">
+                                <i class="fas fa-globe"></i>
+                                <span>工具导航</span>
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-star"></i>
+                                <span>精选推荐</span>
+                            </span>
+                        </div>
+                        <a href="https://ai-bot.cn/" target="_blank" class="tool-btn">
+                            访问网站 <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>智能规划助手</h3>
+                        <p class="tool-description">
+                            基于AI的城市规划建议系统，提供用地布局、交通规划、绿地系统等智能建议，优化规划决策过程。
+                        </p>
+                        <div class="tool-meta">
+                            <span class="meta-item">
+                                <i class="fas fa-brain"></i>
+                                <span>AI驱动</span>
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>实时分析</span>
+                            </span>
+                        </div>
+                        <button class="tool-btn" onclick="openTool('planning')">
+                            开始使用 <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>数据分析平台</h3>
+                        <p class="tool-description">
+                            城市数据智能分析工具，支持人口、经济、环境等多维度数据分析，为城市规划提供科学依据。
+                        </p>
+                        <div class="tool-meta">
+                            <span class="meta-item">
+                                <i class="fas fa-database"></i>
+                                <span>大数据</span>
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>可视化</span>
+                            </span>
+                        </div>
+                        <button class="tool-btn" onclick="openTool('analytics')">
+                            开始使用 <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>设计生成器</h3>
+                        <p class="tool-description">
+                            AI辅助设计工具，根据需求自动生成建筑布局、景观设计方案，加速设计创新过程。
+                        </p>
+                        <div class="tool-meta">
+                            <span class="meta-item">
+                                <i class="fas fa-magic"></i>
+                                <span>智能生成</span>
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-edit"></i>
+                                <span>可编辑</span>
+                            </span>
+                        </div>
+                        <button class="tool-btn" onclick="openTool('generator')">
+                            开始使用 <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ai-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>3D可视化</h3>
+                        <p class="tool-description">
+                            实时3D渲染引擎，将设计方案快速转换为逼真的三维可视化效果，提升方案展示质量。
+                        </p>
+                        <div class="tool-meta">
+                            <span class="meta-item">
+                                <i class="fas fa-cube"></i>
+                                <span>3D渲染</span>
+                            </span>
+                            <span class="meta-item">
+                                <i class="fas fa-vr-cardboard"></i>
+                                <span>VR支持</span>
+                            </span>
+                        </div>
+                        <button class="tool-btn" onclick="openTool('visualization')">
+                            开始使用 <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function openTool(toolName) {
+            const toolNames = {
+                'planning': '智能规划助手',
+                'analytics': '数据分析平台',
+                'generator': '设计生成器',
+                'visualization': '3D可视化'
+            };
+            alert(`${toolNames[toolName]}功能正在开发中，敬请期待！`);
+        }
+    </script>
+</body>
+</html> 
