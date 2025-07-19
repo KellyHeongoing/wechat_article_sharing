@@ -322,6 +322,7 @@ body {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+  color: #fff !important;
 }
 
 .project-content {
@@ -1102,7 +1103,7 @@ body {
 }
 
 .project-category {
-  color: #fff;
+  color: #fff !important;
   font-size: 0.9rem;
   font-weight: 500;
 }
